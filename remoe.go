@@ -134,16 +134,16 @@ func NewClient(token string) RemoClient {
 }
 
 // GetPowerCunsumption : 積算電力消費量を計算する関数
-func GetPowerCunsumption(r RawData) int {
-	return (r.NormalDirectionCumulativeElectricEnergy * r.Coefficient) / (10 * r.CumulativeElectricEnergyUnit)
+func GetPowerCunsumption(r RawData) float64 {
+	return (float64(r.NormalDirectionCumulativeElectricEnergy * r.Coefficient)) / (10 * float64(r.CumulativeElectricEnergyUnit))
 }
 
-// GetPowerCunsumptionDiff : 特定の地点からの積算電力消費量の差を計算する関数
-func GetPowerCunsumptionDiff(r RawData, p int) int {
+// GetPowerCunsumptionDiff : 特定の地点かjらの積算電力消費量の差を計算する関数
+func GetPowerCunsumptionDiff(r RawData, p float64) float64 {
 	now := GetPowerCunsumption(r)
 	if now >= p {
 		return now - p
 	}
 	max := math.Pow(10, float64(r.CumulativeElectricEnergyEffectiveDigits+1))
-	return int(max) - p + now
+	return max - p + now
 }
