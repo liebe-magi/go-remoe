@@ -1,4 +1,4 @@
-# go-remo
+# go-remo [![GoDoc](https://godoc.org/github.com/goccy/go-graphviz?status.svg)](https://pkg.go.dev/github.com/reeve0930/go-remoe)
 
 Nature Remo EおよびNature Remo E lite用のクライアントパッケージ。
 
@@ -25,5 +25,4 @@ p := remoe.GetPowerCunsumptionDiff(data[0], p0)
 
 ## 参考資料
 
-- [GoDoc](https://godoc.org/github.com/reeve0930/go-remoe)
 - [GO言語でNature Remo Eのデータを取得するパッケージを作った](https://fe-notes.work/posts/20200721_go-remoe/)
